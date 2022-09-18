@@ -23,9 +23,17 @@ app.get("/privacy", (req, res) => {
         }
     });
 });
+app.get("/terms", (req, res) => {
+    res.sendFile(`${__dirname}/terms.html`, (err) => {
+        if(err) {
+            console.get(error);
+            res.end(err.message);
+        }
+    });
+});
 
 
 app.listen(process.env.PORT || port, () =>{
-    console.log('Server started');
+    console.log('Server started', port);
   
 })
